@@ -16,7 +16,8 @@ txt_instruction = ('This application allows you to use the Rufier test to make a
                    'tinnitus, shortness of breath, etc.), stop the test and consult a physician.' )
 txt_title = 'Health'
 txt_name = 'Enter Your full name:'
-txt_hintname = "Full name"
+txt_name = "Enter your full name"
+txt_hintname= "Full name"
 txt_hintage = "0"
 txt_test1 = 'Lie on your back and take your pulse for 15 seconds. Click the "Start first test" button to start the timer.\nWrite down the result in the appropriate field.'
 txt_test2 = 'Perform 30 squats in 45 seconds. To do this, click the "Start doing squats" button\nto start the squat counter.'
