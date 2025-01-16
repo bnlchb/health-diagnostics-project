@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from inst import *
 from PyQt5.QtGui import *
+from final_win import *
 class data():
     def __init__(self,age,test1,test2,test3):
         self.age=age
@@ -76,12 +77,15 @@ class TestWin(QWidget):
 
     def next_click(self):
         self.hide()
+        self.exp=data(int(self.line_age.text()),self.line_test1.text(),self.line_test2.text(),self.line_test3.text())
+        self.fw=FinalWin(self.exp)
+
 
     def connects(self):
         self.btn_next.clicked.connect(self.next_click)
         self.btn_test1.clicked.connect(self.timer_test)
-        self.btn_test1.clicked.connect(self.timer_sits)
-        self.btn_test1.clicked.connect(self.timer_final)
+        self.btn_test2.clicked.connect(self.timer_sits)
+        self.btn_test3.clicked.connect(self.timer_final)
     def timer_test(self):
         global time
         time=QTime(0,0,15)
@@ -95,11 +99,11 @@ class TestWin(QWidget):
         self.timer=QTimer()
         self.timer.timeout.connect(self.timer2Event)
         #one squat in 1.5 seconds
-        self.timer.start(15000)
+        self.timer.start(1500)
 
     def timer_final(self):
         global time
-        time=QTime(0,0,15)
+        time=QTime(0,1,0)
         self.timer=QTimer()
         self.timer.timeout.connect(self.timer3Event) 
         self.timer.start(1000)
